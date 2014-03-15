@@ -31,3 +31,34 @@ __Exit:__ The software will ask confirmation to the user.
 ### Flow diagram
 
 ![](https://googledrive.com/host/0B62SZ3WRM2R2d1FMTnBSOGdIeTQ)
+
+
+### Run the project
+
+
+`git clone https://github.com/saulmm/Airport-management`<br/>
+`cd Airport-management/dist/Debug/GNU-MacOSX/`<br/>
+`chmod +x practica_3_aeropuerto`<br/>
+`./practica_3_aeropuerto`
+
+```
+════════════════════════════════════════════════
+                                           4eec
+                                              888L
+   MAIN MENU                                   888b
+                                                ^8888.
+   1) Insert a new land Request                 '8888c
+   2) Land a plane                                88888L
+                                   .8b             :8888b
+   4) View current landing list    *8b             888888
+                                    =88888888888888888888888888888a
+                                    488------------888888--------a
+   3) Exit                         .88             488888
+                                    .             .88888
+                                                  8888P
+                                                 d888F
+                                                J888
+                                               4888
+                                              ,88P
+════════════════════════════════════════════════
+```
