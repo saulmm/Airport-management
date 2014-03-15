@@ -1,3 +1,5 @@
+> Third task of Programming II, [G4011109](http://www.usc.es/es/centros/etse/materia.html?materia=74822&ano=64)	<br/> Computer
+Engineering, Santiago de Compostela
 
 
 
@@ -26,3 +28,6 @@ __Land plane:__ The airport staff will write down the code of the plane that jus
 __Exit:__ The software will ask confirmation to the user.
 
 
+### Flow diagram
+
+![](https://googledrive.com/host/0B62SZ3WRM2R2d1FMTnBSOGdIeTQ)
