@@ -30,7 +30,7 @@ __Exit:__ The software will ask confirmation to the user.
 
 ### Flow diagram
 
-![](https://googledrive.com/host/0B62SZ3WRM2R2d1FMTnBSOGdIeTQ)
+![](https://googledrive.com/host/0B62SZ3WRM2R2ODhVaGxWQ21lWGM)
 
 
 ### Run the project
