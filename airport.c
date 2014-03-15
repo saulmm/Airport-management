@@ -28,14 +28,13 @@ void manageLanding(TLISTA* landingList, TCOLA* waitingQueue) {
         AnadirCola(waitingQueue, planeID);
         
         printf("The plane [%d] has moved to the waiting queue,\n"
-                "there are %d or more planes granted to land.\n", planeID, (MAX_PLANES + 1));
-        
+                "there are %d or more planes granted to land.\n",
+                planeID, (MAX_PLANES + 1));
     }
 }
 
 
 void landPlane(TLISTA* landingList, TCOLA* waitingQueue) {
-    
     if(esVacia(landingList) != 1) {
         TIPOELEM planeID;
         TIPOELEM waitingPlaneID;
@@ -52,18 +51,17 @@ void landPlane(TLISTA* landingList, TCOLA* waitingQueue) {
         printf("\nInsert the ID of the plane to land \n");
         scanf("%d", &planeID);
         found = buscar(*landingList, planeID);
-//        
+
         if(found != fin(*landingList)) {
             printf("The plane [%d] is landing...", planeID);
             suprime(landingList, found);
             
             if(EsColaVacia(*waitingQueue) != 1) {
                 PrimeroCola(*waitingQueue, &waitingPlaneID);
-                printf("%d has to land...\n", waitingPlaneID);
                 EliminarCola(waitingQueue);
                 
                 if(waitingPlaneID != 0) 
-                    addPlane(waitingPlaneID, landingList, fin(*landingList));
+                    addPlane(waitingPlaneID, landingList);
             } 
             
         } else {
@@ -74,17 +72,16 @@ void landPlane(TLISTA* landingList, TCOLA* waitingQueue) {
                 printf("empty queue...");
             }
         }
-//       
-//    
+
     } else {
         printf("empty list...\n");
     }
 }
 
 
-void addPlane(int planeID, TLISTA* landingList, POSICION lastPosition) {
-    inserta(landingList, lastPosition, planeID);
-    printf("\nPlane [%d] waiting to land", planeID);
+void addPlane(int planeID, TLISTA* landingList) {
+    inserta(landingList, fin(*landingList), planeID);
+    printf("\nPlane [%d] is now waiting to land", planeID);
 }
 
 

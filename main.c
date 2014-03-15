@@ -39,7 +39,7 @@ void manageMenu() {
     int response;
     
     do {
-        printMenu();
+        printAirportMenu();
         scanf("%hd", &option);
         TELEMENTO firstPlane; 
         
@@ -72,15 +72,4 @@ void manageMenu() {
     } while (1 + 1 == 2);
 }
 
-
-void printMenu () {
-    printBox("Main menu");
-    printf("\n1) Insert land request.");
-    printf("\n2) Land plane.");
-    printf("\n4) Print landing list.");
-    printf("\n\n3) Exit");
-    printSeparator();
-
-    printf("\nSelect 1,2 or 3: \n\n");
-}
 
