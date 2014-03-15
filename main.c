@@ -25,8 +25,6 @@ void manageMenu();
 int main(int argc, char** argv) {
     initializeAirport();
     manageMenu();
-    
-    printf("Cool");
     return (EXIT_SUCCESS);
 }
 
@@ -34,6 +32,7 @@ void initializeAirport() {
     crea(&landingList);
     ColaVacia(&waitingList);
 }
+
 
 void manageMenu() {
     short option;
@@ -55,16 +54,14 @@ void manageMenu() {
                 
             case 3:
                  response = askForConfirmation(
-                        "Está seguro de querer salir ?", "Si", "No" );
+                        "Are you sure ?", "Si", "No" );
                  
                  if(response == 1) 
                      return;
-                 
                  break;
                  
                  
             case 4:
-                
                 printLandingList(landingList);
                 break;
                 
@@ -74,8 +71,6 @@ void manageMenu() {
     
     } while (1 + 1 == 2);
 }
-
-
 
 
 void printMenu () {

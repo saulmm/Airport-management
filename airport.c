@@ -5,18 +5,12 @@
 #include "listas.h"
 #include "cola.h"
 
-#include "airport.h"
 #include "print_utils.h"
-
-int MAX_PLANES = 4;
-
-void manageLanding(TLISTA* landingList, TCOLA* waitingQueue,  int planeCode);
-void printLandingList(TLISTA landingList);
-void seeWaitingQueue(TCOLA waitingQueue);
-void addPlane(int planeID, TLISTA* landingList, POSICION lastPosition);
+#include "airport.h"
 
 
-void manageLanding(TLISTA* landingList, TCOLA* waitingQueue,  int planeCode) {
+
+void manageLanding(TLISTA* landingList, TCOLA* waitingQueue) {
     TIPOELEM planeID;
     printBox("Landing request form");
     
@@ -63,7 +57,7 @@ void landPlane(TLISTA* landingList, TCOLA* waitingQueue) {
             printf("The plane [%d] is landing...", planeID);
             suprime(landingList, found);
             
-            if(EsColaVacia(waitingQueue) != 1) {
+            if(EsColaVacia(*waitingQueue) != 1) {
                 PrimeroCola(*waitingQueue, &waitingPlaneID);
                 printf("%d has to land...\n", waitingPlaneID);
                 EliminarCola(waitingQueue);

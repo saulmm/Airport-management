@@ -1,9 +1,3 @@
-/* 
- * File:   print_utils.c
- * Author: wtf
- *
- * Created on 15 de marzo de 2014, 17:29
- */
 
 #include <stdio.h>
 #include <stdlib.h>
