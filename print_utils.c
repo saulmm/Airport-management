@@ -21,7 +21,6 @@ void printSeparator() {
 }
 
 
-
 int askForConfirmation (char* message, char* option1, char* option2) {
     char option;
   

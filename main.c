@@ -11,40 +11,46 @@
 #include "airport.h"
 #include "listas.h"
 
+#include "cola.h"
+#include "print_utils.h"
+
+TLISTA landingList;
+TCOLA waitingList;
+
+void initializeAirport();
 void printMenu();
 void manageMenu();
-void requestLanding();
-void searchAndCancel();
-int askForConfirmation (char* message, char* option1, char* option2);
 
-/*
- * 
- */
+
 int main(int argc, char** argv) {
+    initializeAirport();
     manageMenu();
     
     printf("Cool");
     return (EXIT_SUCCESS);
-
-    
-    
 }
 
+void initializeAirport() {
+    crea(&landingList);
+    ColaVacia(&waitingList);
+}
 
 void manageMenu() {
     short option;
     int response;
+    
     do {
         printMenu();
         scanf("%hd", &option);
-                
+        TELEMENTO firstPlane; 
+        
         switch(option) {
             case 1:
-                requestLanding();
+                manageLanding(&landingList, &waitingList);
                 break;
                 
             case 2:
-                searchAndCancel();
+                landPlane(&landingList, &waitingList);
                 break;
                 
             case 3:
@@ -55,6 +61,12 @@ void manageMenu() {
                      return;
                  
                  break;
+                 
+                 
+            case 4:
+                
+                printLandingList(landingList);
+                break;
                 
             default:
                 printf("Opcion incorrecta...");
@@ -64,58 +76,16 @@ void manageMenu() {
 }
 
 
-void requestLanding() {
-    printf("Requesting landing...");
-    TLISTA lista;
-    
-    crea(&lista);
-    addPlane(1, &lista);
-        
-    
-    
-}
 
-
-void searchAndCancel() {
-   printf("Searching and cancelling plane...");
-}
 
 void printMenu () {
-    printf("\n----------------------------------");
-    printf("\nMenu Principal");
-    printf("\n----------------------------------");
-    printf("\n1) Solicitud de aterrizaje");
-    printf("\n2) Buscar y eliminar avion.");
-    printf("\n\n3) Salir");
-    printf("\n----------------------------------\n");
+    printBox("Main menu");
+    printf("\n1) Insert land request.");
+    printf("\n2) Land plane.");
+    printf("\n4) Print landing list.");
+    printf("\n\n3) Exit");
+    printSeparator();
 
-    printf("\nEscoja una opcion: ");
+    printf("\nSelect 1,2 or 3: \n\n");
 }
 
-
-int askForConfirmation (char* message, char* option1, char* option2) {
-    char option;
-  
-    do {
-        printf("%s\n1) %s\n2) %s\n", message, option1, option2);
-        printf("\nIntroduzca su opcion:\n");
-        
-        scanf(" %c", &option);
-
-        switch (option) {
-            case '1':
-                return 1;
-                break;
-                
-            case '2':
-                return 0;
-                break;
-
-            default:
-                printf("Opcion incorrecta\n");
-        }
-    } while (1); 
-    
-    // This never will happen
-    return 0;
-}

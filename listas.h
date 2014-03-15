@@ -17,6 +17,8 @@ int longitud(TLISTA l);
 void inserta(TLISTA *l, POSICION p, TIPOELEM e);
 void suprime(TLISTA *l, POSICION p);
 void modifica(TLISTA *l, POSICION p, TIPOELEM e);
+POSICION buscar(TLISTA l, TIPOELEM E);
+
 
 
 
